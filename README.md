@@ -1,14 +1,16 @@
-ionic-webpack
-=============
+ionic-webpack (ES6)
+===================
 
-Ionic Webpack Starter
+Fork of [cmackay/ionic-webpack](https://github.com/cmackay/ionic-webpack).
+
+It's basically the same, but uses ES6 (from Babel-loader) and has a slightly different project structure.
 
 ## Quick Start
 
 Clone the repository
 
 ```bash
-$ git clone https://github.com/cmackay/ionic-webpack.git
+$ git clone https://github.com/mmmoli/ionic-webpack.git
 ```
 
 Install the dependencies
