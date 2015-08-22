@@ -1,7 +1,4 @@
-
-'use strict';
-
-module.exports = function ($scope) {
+export default function ($scope) {
 
   $scope.title = 'My List';
 

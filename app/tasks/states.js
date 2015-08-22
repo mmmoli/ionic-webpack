@@ -1,7 +1,4 @@
-
-'use strict';
-
-module.exports = function ($stateProvider) {
+export default function ($stateProvider) {
   $stateProvider
     .state('tasks', {
       url      : '/tasks',
@@ -20,4 +17,4 @@ module.exports = function ($stateProvider) {
       controller  : require('./controllers/taskReports'),
       template    : require('./controllers/taskReports.html')
     });
-}
+};

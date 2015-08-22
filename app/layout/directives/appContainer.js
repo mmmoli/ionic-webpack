@@ -1,7 +1,4 @@
-
-'use strict';
-
-module.exports = function () {
+export default function () {
   return {
     restrict : 'C',
     template : require('./appContainer.html')
