@@ -8,7 +8,7 @@ export default ngModule => {
     })
 
     .config(function ($urlRouterProvider) {
-      $urlRouterProvider.otherwise('/tasks');
+      $urlRouterProvider.otherwise('/');
     })
 
 

@@ -1,3 +1,7 @@
+var scripts = global.document.getElementsByTagName('script');
+var src = scripts[scripts.length - 1].getAttribute('src');
+global.__webpack_public_path__ = src.substr(0, src.lastIndexOf('/') + 1);
+
 const angular = require('angular');
 require('angular-animate');
 require('angular-sanitize');
@@ -16,6 +20,8 @@ let ngModule = angular.module('app', [
 require('./constants')(ngModule);
 require('./config')(ngModule);
 require('./run')(ngModule);
+require('./common')(ngModule);
+require('./states')(ngModule);
 
 
 //// Bootstrap App Module

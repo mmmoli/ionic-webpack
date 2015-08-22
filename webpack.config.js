@@ -6,7 +6,8 @@
  */
 var path              = require('path'),
     webpack           = require('webpack'),
-    HtmlWebpackPlugin = require('html-webpack-plugin');
+    HtmlWebpackPlugin = require('html-webpack-plugin'),
+    ngAnnotatePlugin  = require('ng-annotate-webpack-plugin');
 
 module.exports = {
 
@@ -18,9 +19,9 @@ module.exports = {
 
     output: {
         path          : path.join(__dirname, 'www'),
-        filename      : '[name].js',
+        filename      : 'bundle.js',
         publicPath    : '/',
-        chunkFilename : '[chunkhash].js'
+        chunkFilename : 'modules/[chunkhash].js'
     },
 
     module: {
@@ -81,19 +82,33 @@ module.exports = {
         }
     },
 
+    devtool: 'eval',
+
+    devServer: {
+        contentBase: "./app",
+        host: "0.0.0.0"
+    },
+
     plugins: [
+
+        new ngAnnotatePlugin({
+            add: true
+        }),
+
         new webpack.ResolverPlugin(
             new webpack.ResolverPlugin.DirectoryDescriptionFilePlugin(
                 'bower.json', ['main'])
         ),
+
         new webpack.DefinePlugin({
             'process.env': {
                 'NODE_ENV': JSON.stringify('production')
             }
         }),
+
         new HtmlWebpackPlugin({
-            pkg      : require('./package.json'),
-            template : 'app/index.html'
+            inject: true,
+            template: 'app/index.html'
         })
     ]
 

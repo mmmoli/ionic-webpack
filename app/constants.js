@@ -2,7 +2,7 @@ export default ngModule => {
 
   ngModule
 
-    .constant('version', require('../package.json').version)
+    .constant('VERSION', require('../package.json').version)
 
   ;
 }
