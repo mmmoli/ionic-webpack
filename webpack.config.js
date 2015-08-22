@@ -19,6 +19,7 @@ module.exports = {
   output: {
     path          : path.join(__dirname, 'www'),
     filename      : '[name].js',
+    publicPath    : '/',
     chunkFilename : '[chunkhash].js'
   },
 
@@ -70,11 +71,11 @@ module.exports = {
     root: [
       path.join(__dirname, 'app'),
       path.join(__dirname, 'bower_components'),
-      path.join(__dirname, 'node_modules'),
+      path.join(__dirname, 'node_modules')
     ],
     moduleDirectories: [
       'bower_components',
-      'node_modules',
+      'node_modules'
     ],
     alias: {
     }
@@ -87,18 +88,13 @@ module.exports = {
     ),
     new webpack.DefinePlugin({
       'process.env': {
-        // This has effect on the react lib size
         'NODE_ENV': JSON.stringify('production')
       }
     }),
     new HtmlWebpackPlugin({
       pkg      : require('./package.json'),
-      template : 'app/entry-template.html',
+      template : 'app/index.html'
     })
-    // new webpack.optimize.DedupePlugin(),
-    // new webpack.optimize.UglifyJsPlugin()
-    // new webpack.BannerPlugin(banner, options),
-    // new webpack.optimize.DedupePlugin()
   ]
 
 };

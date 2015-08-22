@@ -7,6 +7,7 @@
     <title>{%= o.htmlWebpackPlugin.options.title || o.htmlWebpackPlugin.options.pkg.name || 'Webpack App'%}</title>
   </head>
   <body>
+  hello
     <div class="app-container"></div>
     {% for (var chunk in o.htmlWebpackPlugin.files) { %}<script src="{%=o.htmlWebpackPlugin.files[chunk]%}"></script>{% } %}
     <!-- {%= o.htmlWebpackPlugin.options.pkg.name + ' v' + o.htmlWebpackPlugin.options.pkg.version + ' built on ' + new Date() %} -->
