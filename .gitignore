@@ -9,3 +9,4 @@ plugins/
 .sass-cache/
 .DS_Store
 .idea/
+www/
